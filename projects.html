@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Projects Portfolio | My Bhoomi Group</title>
+    <meta name="description" content="Explore our premium portfolio of NA residential plots, organic farm layouts, and weekend home plotting estates in Pune South's prime appreciation zones." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+
+    <!-- ==========================================
+         PREMIUM NAVIGATION BAR
+         ========================================== -->
+    <header class="header sticky" id="main-header">
+      <div class="container nav-container">
+        <a href="/index.html" class="logo">
+          <span class="logo-title"><i class="fa-solid fa-leaf text-gold"></i> MY BHOOMI</span>
+          <span class="logo-subtitle">Group</span>
+        </a>
+        
+        <button class="hamburger hide-desktop" id="mobile-hamburger" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="/group.html" class="nav-link">Mybhoomi Group</a></li>
+          <li><a href="/about.html" class="nav-link">About Us</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+          <li class="hide-desktop"><a href="#" class="btn btn-gold" data-cta="visit">Schedule Visit</a></li>
+        </ul>
+
+        <div class="hide-mobile">
+          <a href="#" class="btn btn-gold" data-cta="visit">
+            <i class="fa-solid fa-calendar-check"></i> Book Site Visit
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         PAGE SUB-HERO BANNER
+         ========================================== -->
+    <section class="section-padding bg-dark text-center" style="padding-top: 10rem; padding-bottom: 5rem; position: relative; overflow: hidden; background: linear-gradient(135deg, #083C32 0%, #052620 100%);">
+      <div class="container" style="position: relative; z-index: 5;">
+        <span class="hero-tagline" style="margin-bottom: 1rem; border-color: rgba(200, 155, 60, 0.4);">Verified Assets</span>
+        <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem; color: #FFFFFF;" id="projects-page-title">Flagship Plotting Collections</h1>
+        <p class="hero-subtitle" style="font-size: 1.1rem; max-width: 650px; margin: 0 auto; color: #A3B8B0;" id="projects-page-desc">
+          Browse through our institutional-grade NA residential and organic farming developments with clear title deeds.
+        </p>
+      </div>
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(200, 155, 60, 0.05) 0%, transparent 80%); pointer-events: none;"></div>
+    </section>
+
+    <!-- ==========================================
+         DYNAMIC ROUTED SHOWCASE / CATALOG
+         ========================================== -->
+    <section class="section-padding" style="background-color: var(--accent); min-height: 50vh;">
+      <div class="container">
+        
+        <!-- Filter tab bar (Hidden when viewing project details) -->
+        <div class="projects-filter-bar reveal-up" id="catalog-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Assets</button>
+          <button class="filter-btn" data-filter="investment-lands">NA Residential Plots</button>
+          <button class="filter-btn" data-filter="farm-plots">Organic Farm Plots</button>
+          <button class="filter-btn" data-filter="weekend-homes">Weekend Home Estates</button>
+        </div>
+
+        <!-- Catalog Grid (Shows 6 Projects) -->
+        <div class="grid-3 stagger-cards" id="projects-catalog-grid">
+          <!-- Dynamically populated via JS main.js -->
+        </div>
+
+        <!-- Detailed Project View Container (Hidden by default, displayed via JS routing) -->
+        <div id="project-detail-view" style="display: none;">
+          <!-- Left-Right Grid for Core Details -->
+          <div class="grid-2 reveal-up" style="margin-bottom: 5rem; align-items: start;">
+            <!-- Left Side: Interactive image slider & description -->
+            <div>
+              <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem; border: 1px solid rgba(200, 155, 60, 0.25); box-shadow: var(--shadow-luxury);">
+                <img id="detail-img" src="" alt="Project Showcase" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover;" />
+                <div class="roi-badge" id="detail-roi-badge"></div>
+              </div>
+              <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);">Investment Synopsis</h3>
+              <p id="detail-desc" style="color: var(--text-dark); line-height: 1.7; font-size: 1.05rem; margin-bottom: 2rem;"></p>
+              
+              <div class="glass-card" style="padding: 2.25rem; border: 1px solid rgba(200, 155, 60, 0.25); background: #FFFFFF;">
+                <span class="vip-badge" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-file-invoice"></i> Transact Clear Security</span>
+                <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--primary);">Guaranteed Demarcation & Title</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+                  Upon reservation of your plot, we initiate the government mojani mapping process to assign unique survey markings. Handover includes direct Saat Bara mutation copies.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Side: Metadata grid & CTAs -->
+            <div class="glass-card" style="padding: 3rem; background: #FFFFFF; border: 1px solid rgba(8, 60, 50, 0.08);">
+              <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--primary);" id="detail-title"></h3>
+              <span id="detail-location" style="color: var(--secondary-dark); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 1.5rem;"></span>
+              
+              <div style="background-color: var(--accent); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(8, 60, 50, 0.05);">
+                <div>
+                  <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Pricing Structures</span>
+                  <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--primary);" id="detail-price"></div>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Rate Per Sq.Ft.</span>
+                  <div style="font-weight: 700; font-size: 1.1rem; color: var(--secondary-dark);" id="detail-price-sqft"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 1rem; border-bottom: 1px solid rgba(8, 60, 50, 0.08); padding-bottom: 2rem; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted); font-size: 0.95rem;">Municipal / Legal Status</span>
+                  <strong style="color: var(--primary); font-size: 0.95rem;" id="detail-rera"></strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted); font-size: 0.95rem;">Available Sizes</span>
+                  <strong style="color: var(--primary); font-size: 0.95rem;" id="detail-size"></strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span style="color: var(--text-muted); font-size: 0.95rem;">Development Model</span>
+                  <strong style="color: var(--primary); font-size: 0.95rem;">Gated Community Layout</strong>
+                </div>
+              </div>
+
+              <!-- High Conversion Buttons -->
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <a href="#" class="btn btn-primary" data-cta="visit" style="width: 100%; background-color: var(--primary); color: #FFFFFF;">
+                  <i class="fa-solid fa-calendar-check"></i> Book VIP Site Inspection
+                </a>
+                <a href="#" class="btn btn-gold" data-cta="brochure" style="width: 100%;">
+                  <i class="fa-solid fa-file-arrow-down"></i> Download Brochure & Cost Sheet
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919112291415&text=Hi%2C%20I%20want%20to%20discuss%20pricing%20for%20plots." target="_blank" class="btn btn-outline" style="width: 100%; border-color: #25D366; color: #128C7E;">
+                  <i class="fa-brands fa-whatsapp" style="font-size: 1.15rem;"></i> Query Pricing on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Connectivity Index -->
+          <div style="margin-bottom: 5rem;" class="reveal-up">
+            <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary); text-align: center;">Connectivity & Proximity Timeline</h3>
+            <div class="grid-2">
+              <div class="connectivity-list" id="detail-connectivity">
+                <!-- Connectivity Items populated dynamically -->
+              </div>
+              <div class="map-wrapper" style="height: 100%;">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3789.0494488319696!2d73.86438917592476!3d18.379109982685718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1m3!2d73.8643891!3d18.3791099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ecec82cf55cf%3A0xe543e4981a8b13c7!2sKhed%20Shivapur%2C%20Maharashtra%20412205!5e0!3m2!1sen!2sin!4v1717056000000!5m2!1sen!2sin" 
+                  allowfullscreen="" 
+                  loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Standard Internal Amenities -->
+          <div class="reveal-up" style="margin-bottom: 5rem;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 2.25rem; color: var(--primary); text-align: center;">Planned On-Site Amenities</h3>
+            <div class="amenities-grid" id="detail-amenities">
+              <!-- Amenity Cards populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Back Button CTA -->
+          <div class="text-center" style="margin-top: 3rem;">
+            <a href="/projects.html" class="btn btn-outline" style="border-radius: 30px;">
+              <i class="fa-solid fa-arrow-left"></i> Return to Full Portfolio
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         LUXURY FOOTER
+         ========================================== -->
+    <footer class="footer">
+      <div class="container footer-top">
+        <div class="grid-4">
+          <div class="footer-brand-column">
+            <a href="/index.html" class="logo">
+              <span class="logo-title" style="color: #FFFFFF;"><i class="fa-solid fa-leaf text-gold"></i> MY BHOOMI</span>
+              <span class="logo-subtitle">Group</span>
+            </a>
+            <p class="footer-description">
+              Awarded "Maharashtrache Anmol Ratna" in 2023. Dedicated to engineering luxury NA plotting and organic farm layouts with absolute clear titles and compound yields.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Investments</h4>
+            <ul class="footer-links">
+              <li><a href="/projects.html?id=dhanraj-hills" class="footer-link">Dhanraj Hills (NA Plots)</a></li>
+              <li><a href="/projects.html?id=dhanraj-farms" class="footer-link">Dhanraj Farms (Farm Plots)</a></li>
+              <li><a href="/projects.html?id=mdy-farms" class="footer-link">MDY Farms (Weekend Homes)</a></li>
+              <li><a href="/projects.html" class="footer-link">All Active Developments</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Corporate</h4>
+            <ul class="footer-links">
+              <li><a href="/group.html" class="footer-link">Mybhoomi Group Companies</a></li>
+              <li><a href="/about.html" class="footer-link">About Maruti Yedge</a></li>
+              <li><a href="/about.html#achievements" class="footer-link">Prestige & ABP Awards</a></li>
+              <li><a href="/about.html#socials" class="footer-link">Balaji Education Trust</a></li>
+              <li><a href="/contact.html" class="footer-link">VIP Site Tours</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="footer-title">Reach Us</h4>
+            <div class="footer-contact-item">
+              <span><i class="fa-solid fa-map-location-dot"></i></span>
+              <span>4th Floor, Dangat Patil Empire, Navale Bridge, Wadgaon (BK.), Pune 411041</span>
+            </div>
+            <div class="footer-contact-item">
+              <span><i class="fa-solid fa-phone"></i></span>
+              <span>+91 91122 91415</span>
+            </div>
+            <div class="footer-contact-item">
+              <span><i class="fa-solid fa-envelope"></i></span>
+              <span>mybhoomireality@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-grid">
+          <p>&copy; 2026 My Bhoomi Industries India Pvt Ltd. All rights reserved.</p>
+          <p>
+            Developed with <i class="fa-solid fa-heart" style="color: var(--secondary);"></i> by Antigravity Design. 
+            | <a href="/index.html#faqs" style="color: #A3B8B0;">Legal Disclaimer</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+         HIGH-CONVERSION WIDGETS
+         ========================================== -->
+    <div class="modal-backdrop" id="lead-modal">
+      <div class="modal-content">
+        <span class="modal-close" id="modal-close-btn">&times;</span>
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-title-text">Secure Your Plot Today</h3>
+          <p class="modal-subtitle" id="modal-subtitle-text">Submit details to receive direct sales availability charts.</p>
+        </div>
+        <form class="premium-form" id="premium-lead-form">
+          <input type="hidden" id="lead-source" value="general" />
+          
+          <div class="form-group">
+            <label class="form-label" for="form-name">Your Full Name</label>
+            <input type="text" class="form-input" id="form-name" placeholder="John Doe" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-phone">Mobile Phone Number</label>
+            <input type="tel" class="form-input" id="form-phone" placeholder="+91 91122 91415" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-date">Preferred Site Visit Date (Optional)</label>
+            <input type="date" class="form-input" id="form-date" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; margin-top: 0.5rem; background-color: var(--primary);">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Lock early bird benefits
+          </button>
+          <p class="form-disclosure" style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; margin-top: 1rem;">
+            * I authorize Mybhoomi Industries India Pvt Ltd and its representatives to call, RCS, SMS, Email, or WhatsApp me. Consent overrides any DNC/NDNC registration.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success Modal Popup -->
+    <div class="modal-backdrop" id="success-modal">
+      <div class="modal-content text-center" style="max-width: 440px;">
+        <span class="modal-close" id="success-close-btn">&times;</span>
+        <div style="font-size: 3.5rem; color: #22C55E; margin-bottom: 1.5rem;">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 class="modal-title" style="margin-bottom: 0.5rem; font-size: 1.75rem;">Request Registered</h3>
+        <p class="modal-subtitle" style="margin-bottom: 2rem; line-height: 1.5;">
+          Thank you. Your VIP credentials have been initialized. You will now be redirected to the Desk of Maruti Yedge on WhatsApp for immediate plot reservations.
+        </p>
+        <button class="btn btn-dark" id="success-ok-btn" style="width: 100%; border-radius: var(--radius-md); background-color: var(--primary);" onclick="document.getElementById('success-modal').classList.remove('active')">
+          Proceed to WhatsApp Desk
+        </button>
+      </div>
+    </div>
+
+    <!-- Sticky Bottom Mobile Conversion bar -->
+    <div class="sticky-mobile-cta hide-desktop">
+      <a href="https://api.whatsapp.com/send?phone=919112291415&text=Hi%2C%20I%20am%20interested%20in%20My%20Bhoomi%20Group%20plots." target="_blank" class="mobile-cta-whatsapp">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> WhatsApp Us
+      </a>
+      <a href="tel:+919112291415" class="mobile-cta-call">
+        <i class="fa-solid fa-phone-volume"></i> Call Sales Desk
+      </a>
+    </div>
+
+    <!-- Floating WhatsApp Concierge -->
+    <a href="https://api.whatsapp.com/send?phone=919112291415&text=Hi%2C%20I%20am%20interested%20in%20My%20Bhoomi%20Group%20plots." target="_blank" class="whatsapp-floating hide-mobile" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,524 @@
+/* ==========================================
+   PROJECTS HUB & CARD LAYOUT (Forest styled)
+   ========================================== */
+.projects-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  background-color: var(--accent);
+  color: var(--primary);
+  border: 1px solid rgba(8, 60, 50, 0.08);
+  transition: var(--transition-smooth);
+}
+.filter-btn:hover, .filter-btn.active {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(8, 60, 50, 0.15);
+}
+
+/* Luxury Project Cards */
+.project-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-luxury);
+  border: 1px solid rgba(8, 60, 50, 0.05);
+  transition: var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(8, 60, 50, 0.1);
+  border-color: rgba(200, 155, 60, 0.35);
+}
+
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+.project-card:hover .project-image {
+  transform: scale(1.08);
+}
+
+.roi-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 30px;
+  border: 1px solid var(--secondary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.rera-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background-color: rgba(5, 26, 21, 0.75);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 10;
+}
+
+.project-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--secondary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-size: 1.35rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(8, 60, 50, 0.08);
+  border-bottom: 1px solid rgba(8, 60, 50, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.project-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+.project-meta-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.project-meta-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.project-price {
+  display: flex;
+  flex-direction: column;
+}
+.project-price-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.project-price-value {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ==========================================
+   AMENITIES GRID LAYOUT
+   ========================================== */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .amenities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.amenity-card {
+  background-color: var(--accent);
+  padding: 2.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(8, 60, 50, 0.04);
+}
+.amenity-card:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+}
+
+.amenity-icon {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 1.25rem;
+  transition: var(--transition-smooth);
+}
+.amenity-card:hover .amenity-icon {
+  transform: scale(1.15);
+}
+
+.amenity-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.amenity-card:hover .amenity-title {
+  color: #FFFFFF;
+}
+
+.amenity-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.amenity-card:hover .amenity-desc {
+  color: #A3B8B0;
+}
+
+/* ==========================================
+   WHY INVEST & CONNECTIVITY SECTIONS
+   ========================================== */
+.connectivity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.connectivity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(8, 60, 50, 0.02);
+  border-left: 4px solid var(--secondary);
+}
+
+.conn-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.conn-name {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.conn-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent);
+  padding: 0.25rem 0.85rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--secondary-dark);
+}
+
+/* ==========================================
+   ABOUT PAGE LEGACY & THE BOARD DESK
+   ========================================== */
+.director-section {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .director-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.director-image-container {
+  position: relative;
+}
+.director-image-border {
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  position: relative;
+}
+.director-img {
+  border-radius: var(--radius-md);
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.director-experience-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid var(--secondary);
+  padding: 1.25rem 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-dark);
+  text-align: center;
+}
+.exp-years {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1;
+}
+.exp-text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .director-experience-badge {
+    position: static;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+}
+
+.director-desk-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.director-title {
+  color: var(--secondary-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  display: block;
+}
+.director-speech {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.director-credentials {
+  display: flex;
+  gap: 1.5rem;
+  border-top: 1px solid rgba(8, 60, 50, 0.08);
+  padding-top: 1.5rem;
+}
+.credential-item {
+  display: flex;
+  flex-direction: column;
+}
+.cred-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.cred-value {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+/* ABP Majha Awards Banner */
+.awards-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.awards-showcase-card {
+  background: linear-gradient(135deg, #0D4035 0%, #051A15 100%);
+  border: 1px solid rgba(200, 155, 60, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-dark);
+}
+.awards-showcase-card::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: var(--secondary);
+  filter: blur(100px);
+  opacity: 0.15;
+  top: -20px;
+  right: -20px;
+}
+
+.award-trophy {
+  font-size: 3.5rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.award-sub {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.award-main-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.award-desc {
+  color: #A3B8B0;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   CONTACT VIP SITE TOUR & CO-ORDINATES
+   ========================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4.5rem;
+}
+
+@media (max-width: 991px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.contact-card-premium {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 3.5rem;
+  box-shadow: var(--shadow-luxury);
+  border: 1px solid rgba(8, 60, 50, 0.05);
+}
+
+@media (max-width: 768px) {
+  .contact-card-premium {
+    padding: 2.25rem 1.5rem;
+  }
+}
+
+.vip-badge {
+  display: inline-block;
+  background-color: rgba(200, 155, 60, 0.08);
+  border: 1px solid var(--secondary);
+  color: var(--secondary-dark);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.35rem 1.25rem;
+  border-radius: 30px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.office-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.office-card {
+  background-color: var(--accent);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  transition: var(--transition-smooth);
+}
+.office-card:hover {
+  border-left-color: var(--secondary);
+  box-shadow: var(--shadow-luxury);
+}
+.office-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.office-address {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.map-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-luxury);
+  border: 1px solid rgba(8, 60, 50, 0.08);
+  height: 350px;
+}
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
